@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 014</title>
+</head>
+<body>
+
+<h1>Heading A</h1>
+<div></div>
+	<h2>Subheading A1</h2>
+			<p>This is a paragraph</p>
+			<p>Just another paragraph</p>
+
+
+<script type="text/javascript">
+
+d3.select("body>h2").remove();
+
+
+// Putting stuff back on the screen... but changing the HTML element type
+var removed_elements = d3.selectAll("p").remove();
+
+	d3.select("div")
+		.selectAll("p")
+		.data(removed_elements[0])
+		.enter()
+			.append("a")
+			.attr("href", "www.google.com")
+			.html(
+				function(d){
+					return d.innerHTML + "<br/>";
+				}
+			);
+
+</script>
+
+</body>
+</html>
