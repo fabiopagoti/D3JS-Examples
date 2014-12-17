@@ -1,0 +1,14 @@
+
+.important{
+	color: red;
+	font-family: Arial;
+	font-weight: bolder;
+}
+
+.detail{
+	color: blue;
+	font-family: Verdana;
+	/*font-size: 8;*/
+	font-weight: lighter;
+}
+

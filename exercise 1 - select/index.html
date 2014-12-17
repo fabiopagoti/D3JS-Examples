@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script type="text/javascript" src="../d3/d3.min.js"></script>
+<head>
+	<title>D3 js Examples - </title>
+</head>
+<body>
+
+<p>This is a paragraph</p>
+<p>Just another paragraph</p>
+
+<script type="text/javascript">
+
+var paragraph = d3.select("p"); // Select just the first element
+
+paragraph[0][0].dir = "rtl"; // selection is always an array of arrays
+	
+</script>
+
+</body>
+</html>

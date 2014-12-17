@@ -1,0 +1,302 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"key",
+				"key_selected"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"debug",
+				"debugger  (keyword)"
+			],
+			[
+				"main",
+				"mainModel"
+			],
+			[
+				"man",
+				"mainModel"
+			],
+			[
+				"get",
+				"getCore"
+			],
+			[
+				"ad",
+				"admin-gui"
+			],
+			[
+				"admi",
+				"admin-gui"
+			],
+			[
+				"ma",
+				"manager-status"
+			],
+			[
+				"mana",
+				"manager-status"
+			],
+			[
+				"rol",
+				"roles"
+			],
+			[
+				"us",
+				"username"
+			],
+			[
+				"role",
+				"rolename"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 247.0,
+		"selected_items":
+		[
+			[
+				"html",
+				"Snippet: html"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 146.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/fabiopagoti/Dev/js/d3js"
+	],
+	"file_history":
+	[
+		"/Users/fabiopagoti/Dev/js/d3js/template/index.html",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/User/STProjectMaker.sublime-settings",
+		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/index.html",
+		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/model/pokemon.json",
+		"/Users/fabiopagoti/Dev/openui5/NYT-Campaign-Finance/index.html",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/GoSublime.sublime-settings",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
+		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/controls/br.com.hanabrasil.polygonStats.js",
+		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/model/test.json",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/SublimeUI5/Templates/UI5 JVC Tiny App/NavigationRoute.sublime-workspace",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/nyt-launchpad-m/main.view.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/nyt-launchpad-m/main.controller.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/index.html",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/sample_app/sample_app.html",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/sample_app/views/first_page.view.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/sample_app/views/first_page.controller.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/first_page.view.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/first_page.controller.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/apps/sample_app.html",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/nyt-launchpad-m/other_page.view.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/app",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/nyt-launchpad-m/other_page.controller.js",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/model/model.json",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/README.mdown",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/i18n/messageBundle_pt.properties",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/i18n/messageBundle.properties",
+		"/Users/fabiopagoti/Dev/hana/workspace_eclipse_hana/NYT-Launchpad-M/WebContent/i18n/messageBundle.properties.pt",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/STProjectMaker/STProjectMaker.sublime-settings",
+		"/Users/fabiopagoti/Dev/hana/openui5-runtime/resources/sap-ui-core-dbg.js",
+		"/Users/fabiopagoti/Dev/hana/openui5/src/testsuite/pom.xml",
+		"/Users/fabiopagoti/Dev/hana/openui5/Gruntfile.js",
+		"/Users/fabiopagoti/Dev/hana/openui5/pom.xml",
+		"/Users/fabiopagoti/Dev/hana/LocalUI5HelloWorld/WebContent/result.html",
+		"/Users/fabiopagoti/Dev/hana/LocalUI5HelloWorld/WebContent/index.html",
+		"/Users/fabiopagoti/Dev/nodejs/chatrooms/server.js",
+		"/Users/fabiopagoti/Dev/hana/openui5/package.json",
+		"/Users/fabiopagoti/Dev/nodejs/chatrooms/package.json",
+		"/Users/fabiopagoti/Desktop/node_test/server.js",
+		"/usr/local/bin/node",
+		"/Users/fabiopagoti/Dev/workspace_eclipse_hana/NYT-Launchpad/package.json",
+		"/Users/fabiopagoti/Dev/hana/openui5/README.md",
+		"/Library/apache-tomcat-8.0.14/wtpwebapps/openui5-sdk/resources/sap/ui/demokit/library-dbg.js",
+		"/Library/apache-tomcat-8.0.14/conf/catalina.policy",
+		"/Users/fabiopagoti/Dev/hana/openui5-sdk-1.24.2/demoapps.html",
+		"/Library/apache-tomcat-8.0.14/conf/tomcat-users.xml"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"\",\n",
+			"jpg",
+			"nyt-article-search",
+			"sample_app.",
+			"nyt-launchpad-m",
+			"other_page",
+			"numberUnit : \"{i18n>Tile_Info",
+			"Title",
+			"page",
+			"info : \"{i18n>Tile_Title",
+			"Title",
+			"resource",
+			"read",
+			"UI5En",
+			"demokit"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"png",
+			"view",
+			"views.",
+			"sample_app",
+			"first_page",
+			"numberUnit : \"{i18n>Tile_NumberUnit",
+			"NumberUnit",
+			"view",
+			"page",
+			"info : \"{i18n>Tile_Info",
+			"Info"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.MarGo-output":
+	{
+		"height": 118.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "d3js examples.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 359.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

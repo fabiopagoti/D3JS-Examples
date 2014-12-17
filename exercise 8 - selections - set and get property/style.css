@@ -1,0 +1,23 @@
+
+.important{
+	color: red;
+	font-family: Arial;
+	font-weight: bolder;
+}
+
+.detail{
+	color: blue;
+	font-family: Verdana;
+	font-weight: lighter;
+}
+
+.odd{
+	color: green;
+	font-style: italic;
+}
+
+.even{
+	color: purple;
+	font-style: normal;
+}
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 8</title>
+</head>
+<body>
+
+<!-- <h1 id="main_header"> Heading A</h1> -->
+<h1> Heading A</h1>
+<h2> Subheading A1 </h2>
+<p>This is a paragraph</p>
+<p>Just another paragraph</p>
+
+<div>
+<h1> Heading B</h1>
+<p>Let's begin a new topic</p>
+<p>This one is not so important</p>
+</div>
+
+<script type="text/javascript">
+
+var nodes = d3.selectAll("div>p");
+
+// nodes.attr("class", "detail"); // Same as...
+nodes.property("className", "detail");
+
+
+// this DOESN'T WORK.... class is a reserved word in JS.. the correct property name for 'class' attribute is className
+// nodes.property("class", "detail");
+
+
+console.log('attr class: ' + nodes.attr("class"));
+console.log('attr className: ' + nodes.attr("className"));
+console.log('property class: ' + nodes.property("class"));
+console.log('property className: ' + nodes.property("className"));
+
+</script>
+
+
+<form>
+First name:<br>
+<input id="firstname" type="text" name="firstname" value="fabio">
+<br>
+Last name:<br>
+<input id="lastname">
+<br>
+<input id="chk_happy" type="checkbox" name="chk_happy" value="HAPPY" checked="true">Happy
+</form>
+
+<script type="text/javascript">
+	console.log('First Name property Type: ' + d3.select("#firstname").property("type"));
+	console.log('First Name property Name: ' + d3.select("#firstname").property("name"));
+	console.log('First Name property Value: ' + d3.select("#firstname").property("value"));
+
+
+	d3.select("#lastname")
+		.property("type", "text")
+		.property("name","lastname")
+		.property("value","pagoti");
+
+
+	console.log('Last Name attr Type: ' + d3.select("#lastname").attr("type"));
+	console.log('Last Name attr Name: ' + d3.select("#lastname").attr("name"));
+	console.log('Last Name attr Value: ' + d3.select("#lastname").attr("value"));
+
+	console.log('Happy attr Type: ' + d3.select("#chk_happy").attr("type"));
+	console.log('Happy attr Name: ' + d3.select("#chk_happy").attr("name"));
+	console.log('Happy attr Value: ' + d3.select("#chk_happy").attr("value"));
+	console.log('Happy attr Checked: ' + d3.select("#chk_happy").property("checked"));
+
+</script>
+
+</body>
+</html>
