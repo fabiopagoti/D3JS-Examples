@@ -23,19 +23,20 @@ var canvas = d3.select("svg");
 		.attr("height",1000);
 
 	canvas
-		.append("polyline")
+		.append("polygon")
 			.attr("stroke","brown")
 			.attr("stroke-width",10)
 			.attr("fill", "none")
 			.attr("points","30,500 30,100 400,100 400,200");
 
+
 	canvas
-		.append("polyline")
+		.append("polygon")
 			.attr("stroke", "red")
 			.attr("stroke-width",40)
 			.attr("stroke-dasharray", [30])
 			.attr("points", "500,500 400,600 600,700 900,500 300,300")
-			.attr("fill","none")
+			.attr("fill","green")
 			.attr("opacity",0.3)
 			.attr("stroke-linejoin","round");
 		
