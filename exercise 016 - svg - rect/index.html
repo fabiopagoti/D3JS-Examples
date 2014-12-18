@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 016</title>
+</head>
+<body>
+
+<div>
+
+</div>
+
+<script type="text/javascript">
+
+d3.select("div").append("svg");
+
+var canvas = d3.select("svg");
+
+	canvas
+		.attr("width",1000)
+		.attr("height",1000);
+
+	canvas
+		.append("rect")
+			.attr("height",100)
+			.attr("width",200); // black is the default
+
+	canvas
+		.append("rect")
+			.attr("height",50)
+			.attr("width",300)
+			.attr("fill","purple");
+
+	canvas
+		.append("rect")
+			.attr("height", 30)
+			.attr("width", 400)
+			.attr("x",200)
+			.attr("y",200)
+			.attr("fill", "orange");
+
+	canvas
+		.append("rect")
+			.attr("height",300)
+			.attr("width", 400)
+			.attr("x", 500)
+			.attr("y",400)
+			.attr("rx", 200)
+			.attr("ry", 100)
+			.attr("fill", "green");
+
+</script>
+
+</body>
+</html>
