@@ -4,7 +4,7 @@
 <script src="../d3/d3.js" type="text/javascript" ></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <head>
-	<title>D3 js Examples - 017</title>
+	<title>D3 js Examples - 018</title>
 </head>
 <body>
 
@@ -23,25 +23,28 @@ var canvas = d3.select("svg");
 		.attr("height",1000);
 
 	canvas
-		.append("circle")
-			.attr("r",100);
-
+		.append("ellipse")
+			.attr("rx",100)
+			.attr("ry",200)
 	canvas
-		.append("circle")
-			.attr("r",10)
+		.append("ellipse")
+			.attr("rx",10)
+			.attr("ry",20)
 			.attr("cx", 100)
 			.attr("cy", 200);
 
 	canvas
-		.append("circle")
-			.attr("r", 20)
+		.append("ellipse")
+			.attr("rx", 200)
+			.attr("ry", 50)
 			.attr("cx", 200)
-			.attr("cy", 250)
+			.attr("cy", 350)
 			.attr("fill", "green");
 
 	canvas
-		.append("circle")
-			.attr("r",50)
+		.append("ellipse")
+			.attr("rx",200)
+			.attr("ry",300)
 			.attr("cx",700)
 			.attr("cy",400)
 			.attr("fill", "orange")
@@ -49,39 +52,32 @@ var canvas = d3.select("svg");
 			.attr("stroke-width",5);
 
 
-// Bizarre Sun
-	canvas
-			.append("circle")
-				.attr("r",50)
-				.attr("cx",300)
-				.attr("cy",600)
-				.attr("fill","yellow")
-				.attr("stroke","yellow")
-				.attr("stroke-width",210)
-				.attr("opacity",0.8);
+// // Bizarre Sun
 			
 
 	canvas
-		.append("circle")
-			.attr("r",50)
+		.append("ellipse")
+			.attr("rx",60)
+			.attr("ry",100)
 			.attr("cx",300)
-			.attr("cy",600)
-			.attr("fill","yellow")
+			.attr("cy",700)
+			.attr("fill","red")
 			.attr("stroke","orange")
 			.attr("stroke-width",240)
-			.attr("stroke-dasharray",[5])
+			.attr("stroke-dasharray",[10])
 			;
 
 	canvas
-		.append("circle")
-			.attr("r",50)
+		.append("ellipse")
+			.attr("rx",60)
+			.attr("ry",100)
 			.attr("cx",300)
-			.attr("cy",600)
-			.attr("fill","yellow")
-			.attr("stroke","red")
+			.attr("cy",700)
+			.attr("fill","red")
+			.attr("stroke","cyan")
 			.attr("stroke-width",190)
-			.attr("stroke-dasharray",[10])
-			// .attr("opacity",0.5)
+			.attr("stroke-dasharray",[5])
+			.attr("opacity",0.5)
 			;
 			
 
