@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 027</title>
+</head>
+<body>
+
+  <button>Insert Item</button>
+  
+  <ul>
+  </ul>
+
+
+<script type="text/javascript">
+// Example from: http://jsbin.com/vomuwababu/1/edit
+var data = [{
+  id: 3,
+  name: "Tim"
+}, {
+  id: 2,
+  name: "Art"
+}, {
+  id: 6,
+  name: "Manja"
+}];
+
+function render() {
+  var items = d3.select('ul').selectAll('li').
+    data(data, function(d) { return d.id; }).
+    text(function(d) { return "Existing item: " + d.name; });
+  
+  items.enter().append('li').
+    text(function(d) { return "New item: " + d.name; });
+  
+  items.exit().
+    remove();
+  
+  items.order();
+}
+
+d3.select('button').on('click', function() {
+  data = [data[0], { id: 1, name: "Unborny" }].concat(data.slice(1));
+  render();
+});
+
+render();
+
+</script>
+
+</body>
+</html>
