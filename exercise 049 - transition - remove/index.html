@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 049</title>
+</head>
+<body>
+
+<div>
+	<svg width=1000 height=1000>
+	</svg>
+</div>
+
+
+<script type="text/javascript">
+	
+	var canvas = d3.select("svg");
+
+	canvas
+		.append("circle")
+			.attr("r",20)
+			.attr("cx", 100)
+			.attr("cy",100);
+
+	canvas
+		.select("circle")
+		.transition("move_right")
+			.attr("cx",800)
+			.remove() // does not remove as there is a subsequent transition
+		.transition("move_down")
+			.delay(500)
+			.attr("cy",400)
+		.transition("move_down")
+			.duration(2000)
+			.attr("cx", 100)
+			.attr("cy",100)
+			.attr("r",40)
+			.remove();
+
+</script>
+
+</body>
+</html>

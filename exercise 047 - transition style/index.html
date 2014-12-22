@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.min.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 047</title>
+</head>
+<body>
+
+<!-- <h1 id="main_header"> Heading A</h1> -->
+<h1> Heading A</h1>
+<h2> Subheading A1 </h2>
+<p>This is a paragraph</p>
+<p>Just another paragraph</p>
+
+<div>
+<h1> Heading B</h1>
+<p>Let's begin a new topic</p>
+<p>This one is not so important</p>
+</div>
+
+<button>Transition!</button>
+
+<script type="text/javascript">
+
+d3.select("button").on('click',function(){
+	d3.selectAll("div>p")
+		.transition()
+		.duration(3000)
+		.style("color", "red")
+		.style("font-family", "Times New Roman")
+		.style("font-weight", "bolder")
+		.style("font-size","500%"); // it starts really small... maybe it's necessary to specify the start value explicitly
+
+});
+
+var nodes = d3.selectAll("p");
+
+nodes.style("color", "red");
+nodes.style({
+			"font-family": "Arial",	
+			"font-weight": "bolder"
+			});
+
+
+d3.selectAll("div>p")
+	.style("color", "blue")
+	.style("font-family", "Verdana")
+	.style("font-weight","lighter");
+
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 038</title>
+</head>
+<body>
+
+<div>
+	
+	<svg height=700 width=1000>
+
+	</svg>
+
+</div>
+
+<script type="text/javascript">
+
+	var canvas = d3.select("svg");
+
+	if (canvas.select("circle").empty()){
+		alert("SVG is empty!!!");
+	}
+
+	canvas
+		.selectAll("circle")
+			.data([10,20,30])
+			.enter()
+				.append("circle")
+				.attr("fill","blue")
+				.attr("stroke-width", 5)
+				.attr("stroke", "red")
+				.attr("cx", function(d,i){return (i + 1) * 50; })
+				.attr("cy", function(d,i){return (i + 1) * 50; })
+				.attr("r", function(d,i){return d; });
+
+	if (!canvas.select("circle").empty()){
+		alert("... not anymore");
+	};	
+		
+</script>
+
+</body>
+</html>

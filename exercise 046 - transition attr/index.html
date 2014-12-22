@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 046</title>
+</head>
+<body>
+
+<div>
+
+<svg height="500px" width="500px">
+
+</svg>
+
+</div>
+
+
+<script type="text/javascript">
+
+	var canvas = d3.select("svg");
+
+	var group = canvas.append("g");
+
+	group
+		.append("rect")
+			.attr("width", 300)
+			.attr("height", 150)
+			.attr("fill", "red")
+			.attr("stroke", "yellow");
+
+	group
+		.insert("text")
+			.attr("dx", 150)
+			.attr("y", 75)
+			.attr("fill","black")
+			.text("hello!");
+
+	group
+		.selectAll("*")
+			.transition()
+				.duration(3000)
+				.attr("width",600) // interpolateNumber is used
+				.attr("dx",function(){return 300}) 
+				.attr("fill", "rgb(50,50,250)") //  interpolateRgb is used
+				.text("Bye!")// interpolateString is used 
+				;
+
+</script>
+
+</body>
+</html>
