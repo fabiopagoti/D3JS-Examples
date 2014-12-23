@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 059</title>
+</head>
+<body>
+
+
+<div>
+<h1>interpolateLab</h1>
+<b>
+<span id="color"></span>
+</div>
+<br/>
+<span id="background"></span>
+</b>
+<p></p>
+</div>
+
+<script type="text/javascript">		
+
+// http://colormine.org/convert/rgb-to-lab
+var lab_a = d3.lab(32.30,79.19,-107.86);
+var lab_b = d3.lab(53.23,80.109,67.22);
+
+var my_interpolation = d3.interpolateLab(lab_a,lab_b); // returns a function!
+
+var count = 1;
+var count_max = 500;
+
+	d3.select("#color")
+		.text("Color... From " + lab_a + " to " + lab_b);
+
+	d3.select("#background")
+		.text("background... From " + lab_b + " to " + lab_a);
+		
+	d3.select("p")
+			.style("color", lab_a)
+			.style("background", lab_b)
+			.text("_______");
+
+function doInterpolation(){
+
+	var t = my_interpolation(count / count_max);
+	var s = my_interpolation(1 - (count / count_max));
+
+	d3.select("p")
+			.style("color", t)
+			.style("background", s)
+			.text(t);
+
+	if (count >= count_max) {
+		return true;
+	};
+	count++;
+};
+
+d3.timer(doInterpolation,1000);
+
+</script>
+
+</body>
+</html>

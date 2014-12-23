@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 058</title>
+</head>
+<body>
+
+
+<div>
+<h1>interpolateHcl - Interpolating Hue</h1>
+<b>
+<span id="color"></span>
+</div>
+<br/>
+<span id="background"></span>
+</b>
+<p></p>
+</div>
+
+<script type="text/javascript">		
+
+var hcl_a = d3.hcl(0,100,100);
+var hcl_b = d3.hcl(480,100,100);
+
+var my_interpolation = d3.interpolateHcl(hcl_a,hcl_b); // returns a function!
+
+var count = 1;
+var count_max = 500;
+
+	d3.select("#color")
+		.text("Color... From " + hcl_a + " to " + hcl_b);
+
+	d3.select("#background")
+		.text("background... From " + hcl_b + " to " + hcl_a);
+		
+	d3.select("p")
+			.style("color", hcl_a)
+			.style("background", hcl_b)
+			.text("________");
+
+function doInterpolation(){
+
+	var t = my_interpolation(count / count_max);
+	var s = my_interpolation(1 - (count / count_max));
+
+	d3.select("p")
+			.style("color", t)
+			.style("background", s)
+			.text(t);
+
+	if (count >= count_max) {
+		return true;
+	};
+	count++;
+};
+
+d3.timer(doInterpolation,1000);
+
+</script>
+
+</body>
+</html>

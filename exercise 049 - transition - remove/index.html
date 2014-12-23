@@ -27,12 +27,14 @@
 	canvas
 		.select("circle")
 		.transition("move_right")
+			.delay(1000)
 			.attr("cx",800)
 			.remove() // does not remove as there is a subsequent transition
 		.transition("move_down")
-			.delay(500)
+			.duration(2000)
 			.attr("cy",400)
-		.transition("move_down")
+			.style("fill", "red")
+		.transition("go_back")
 			.duration(2000)
 			.attr("cx", 100)
 			.attr("cy",100)

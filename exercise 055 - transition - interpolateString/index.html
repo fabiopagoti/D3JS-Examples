@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 055</title>
+</head>
+<body>
+
+
+<div>
+<h1>interpolateString</h1>
+<b><span></span></b>
+<p></p>
+</div>
+
+<script type="text/javascript">		
+
+var string_a = "300 12px sans-serif";
+var string_b = "500 36px Comic-Sans";
+
+var my_interpolation = d3.interpolateString(string_a,string_b); // returns a function!
+
+var count = 1;
+var count_max = 10;
+
+	d3.select("span")
+		.text("From " + string_a + " to " + string_b);
+
+	d3.select("div")
+		.append("p")
+			.text(string_a);
+
+
+function doInterpolation(){
+
+	d3.select("div")
+		.append("p")
+			.text(my_interpolation(count / count_max));
+
+	if (count >= count_max) {
+		return true;
+	};
+	count++;
+};
+
+d3.timer(doInterpolation,1000)
+</script>
+
+</body>
+</html>
