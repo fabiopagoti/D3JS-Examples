@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 067</title>
+</head>
+<body>
+
+<h1>Scale - Linear with not default interpolate</h1>
+<p>
+	Domain: <span id="d_min"></span> - <span id="d_max"></span> <br/>
+	Nice Domain: <span id="d_nice_min"></span> - <span id="d_nice_max"></span> <br/>
+	Range:  <span id="r_min"></span> - <span id="r_max"></span> <br/>
+</p>
+
+<table>
+	<tr>
+		<th>Value</th>
+		<th>Scaled</th>
+	</tr>
+</table>
+
+
+<script type="text/javascript">
+	var my_first_scale = d3.scale.linear();
+
+	var d_min = Math.random();
+	var d_max = Math.random() * 10 + 1;
+	var r_min = Math.random();
+	var r_max = Math.random() * 100 + 1;
+
+	d3.select("#d_min").text(d_min);
+	d3.select("#d_max").text(d_max);
+	d3.select("#r_min").text(r_min);
+	d3.select("#r_max").text(r_max);
+
+	my_first_scale
+		.domain([d_min,d_max])
+		.range([r_min,r_max])
+		.nice()
+		.clamp(true)  // random generator was changed ... so there might be values out of the valid domain
+		;
+
+	var values = [];
+
+	for (var i = 0; i < 20; i++) {
+		var new_number = +(Math.random() * 10).toFixed(2); // + forces a number http://stackoverflow.com/a/12830454/968144
+		values.push(new_number);
+		
+	};
+
+	values.sort();
+	
+	d3.select("table")
+		.selectAll("td")
+		.data(values)
+		.enter()
+			.append("tr")
+			.html(function(d,i){
+				var _t = 
+					"<td>" + d + "</td>" +
+					"<td>" + my_first_scale(d) + "</td>";
+				return _t;
+			});
+
+	d3.select("#d_nice_min").text(my_first_scale.domain()[0]);
+	d3.select("#d_nice_max").text(my_first_scale.domain()[1]);
+
+
+</script>
+
+</body>
+</html>

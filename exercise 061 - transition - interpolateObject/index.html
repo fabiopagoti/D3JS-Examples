@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<head>
+
+	<title>D3 js Examples - 061</title>
+</head>
+<body>
+
+<div>
+
+<h1>interpolateObject</h1>
+
+<form>
+<!-- 
+	<label for="txa_A">Object A</label>
+	<br/>
+	<textarea id="txa_A" name="txa_A" rows="10" cols="30">\"a\":\"5\",\"b\":\"10\"</textarea>
+	<br/>
+	<label for="txa_B">Object B</label>
+	<br/>	
+	<textarea id="txa_B" name="txa_B" rows="10" cols="30">\"b\":\"50\",\"c\":\"10\"</textarea>
+	<br/>
+ -->	
+ <button type="button" onclick="startObjectsInterpolation()">Interpolate Objects</button>
+</form>
+<table border="1">
+<th>a</th>
+<th>bb</th>
+<th>c</th>
+
+</table>
+
+</div>
+
+
+<script type="text/javascript">		
+
+var obj_a = {
+	a:1,
+	b:50,
+	c:100
+};
+
+var obj_b = {
+	a:10,
+	bb:50, // bb is not in obj_a
+	c:1
+};
+
+var my_interpolation;
+
+var count = 1;
+var count_max = 100;
+
+function startObjectsInterpolation(){
+
+	// debugger;
+	// var text_areas = d3.selectAll("textarea")[0];
+	// obj_a = text_areas[0].value;
+	// obj_b = text_areas[1].value;
+
+	my_interpolation = d3.interpolateObject(obj_a,obj_b); // returns a function!
+
+	d3.timer(writeArray,1000);
+
+};
+
+function writeArray(){
+	var new_row = my_interpolation(count / count_max);
+
+	var new_table_row = d3.select("table")
+		.append("tr");
+
+			new_table_row.append("td")
+				.text(new_row.a);
+
+			new_table_row.append("td")
+				.text(new_row.bb);
+
+			new_table_row.append("td")
+				.text(new_row.c);
+
+	if (count >= count_max) {
+		return true;
+	};
+	count++;
+
+};
+
+</script>
+
+</html>

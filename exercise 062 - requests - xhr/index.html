@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<head>
+	<title>D3 js Examples - 062</title>
+</head>
+<body>
+
+<div id="xhr">
+
+</div>
+
+<div id="txt">
+
+</div>
+
+<div id="csv">
+<table border=1>
+	<th>Fruit</th>
+	<th>Price</th>
+	<th>Color</th>	
+</table>
+</div>
+
+
+<div id="xml">
+
+</div>
+
+<div id="json">
+
+</div>
+
+
+
+<script type="text/javascript">		
+
+d3.xhr("http://services.odata.org/V4/TripPinServiceRW/People('russellwhyte')",function(a,b){
+
+	d3.select("#xhr")
+		.append("h1")
+			.text("XHR");
+
+	d3.select("#xhr")
+		.append("p")
+			.text(b.response);
+});
+
+
+d3.text("data.txt", function(a,b){
+
+	d3.select("#txt")
+		.append("h1")
+			.text("Text");
+
+	d3.select("#txt")
+		.append("p")
+			.text(b);
+});
+
+d3.csv("fruits.csv", function(a,b){
+	
+	d3.select("#csv")
+		.insert("h1","table")
+			.text("CSV");
+
+	d3.select("#csv")
+		.select("table")
+		.selectAll("td")
+		.data(b)
+		.enter()
+			.append("tr")
+				.html(function(d,i){
+					var _t =
+						"<td>" + d.Fruit + "</td>" +
+						"<td>" + d.Price + "</td>" +
+						"<td>" + d.Color + "</td>"
+					;
+					return _t;
+				});
+});
+
+
+// https://developer.yahoo.com/weather/
+d3.xml("https://query.yahooapis.com/v1/public/yql?q=select%20wind%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22chicago%2C%20il%22)&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"
+	,function(a,b){
+	
+	d3.select("#xml")
+		.insert("h1")
+			.text("XML");
+
+	d3.select("#xml")
+			.append("p")
+				.text(b.valueOf());
+	}
+);
+
+//http://www.quandl.com/
+d3.json("//www.quandl.com/api/v1/datasets/BOE/XUDLBK38",
+	function(a,b){
+
+	d3.select("#json")
+		.insert("h1")
+			.text("JSON");
+
+	d3.select("#json")
+			.append("p")
+				.text(JSON.stringify(b));
+	}
+);
+
+
+
+</script>
+
+</html>
