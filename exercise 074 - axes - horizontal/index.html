@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - 074</title>
+</head>
+<body>
+
+<svg>
+
+</svg>
+
+<script type="text/javascript">
+
+	var width = 800,
+		height = 500;
+	var barPadding = 1;
+
+	var padding_left = width * .05;
+	var padding_right = width * .05;
+	var padding_top = height * .05;
+	var padding_bottom = height * .1;
+
+	var canvas = d3.select("svg")
+					.attr("width", width)
+					.attr("height", height);
+
+	var values = [];
+
+	var new_number;
+	for (var i = 0; i < 20; i++) {
+		new_number = +Math.random().toFixed(2); // + forces a number http://stackoverflow.com/a/12830454/968144
+		values.push(new_number);	
+	};
+	values.push(0);
+	values.push(1);
+
+	values.sort();
+
+	var scale_x = d3.scale.linear();
+	var scale_y = d3.scale.linear();
+
+	scale_x
+		.domain([0,22])
+		.range([0,width - padding_left - padding_right]);
+
+	scale_y
+		.domain([0,1])
+		.range([1,height - padding_top - padding_bottom]);
+	
+	canvas
+		.selectAll("rect")
+		.data(values)
+		.enter()
+			.append("rect")
+				.attr("width", function(d,i) { return (width - padding_left - padding_right) / values.length - barPadding ; })
+				.attr("height", function(d){ return scale_y(d); })
+				.attr("x", function(d,i){ return i * ((width - padding_left - padding_right) / values.length) + padding_left ;})
+				.attr("y", function(d,i){ return height - scale_y(d) - padding_bottom; });
+
+
+	// Axes
+
+	var axis_x = d3.svg.axis()
+					.scale(scale_x)
+					.orient("bottom");
+
+	canvas
+		.append("g")
+			.call(axis_x)
+			.attr("transform", "translate(" + padding_left + "," + (height - padding_bottom) + ")")
+			.classed({axis:true});
+
+</script>
+
+</body>
+</html>

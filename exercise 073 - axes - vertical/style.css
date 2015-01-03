@@ -1,0 +1,20 @@
+svg {
+	background-color: lightblue;
+}
+
+.axis line{
+	stroke-width:5;
+	fill: none;
+    stroke: black;
+    shape-rendering: crispEdges;
+}
+
+.axis text{
+	font-style: italic;
+	fill: green;
+}
+
+.axis path{
+	fill: gray;
+	stroke-width:1;
+}

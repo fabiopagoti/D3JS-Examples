@@ -4,16 +4,16 @@
 <script src="../d3/d3.js" type="text/javascript" ></script>
 <link rel="stylesheet" type="text/css" href="style.css">
 <head>
-	<title>D3 js Examples - 071</title>
+	<title>D3 js Examples - 072</title>
 </head>
 <body>
 
 
 
-<h1>Scale - Quantile</h1>
+<h1>Scale - Threshold</h1>
 <p>
-	Domain: 5 - 6 - 7 - 10 <br/>
-	Range:  F - C - A <br/>
+	Domain: 5 - 7.5 - 10 <br/>
+	Range:  F - C - B - A <br/>
 </p>
 
 <table>
@@ -25,21 +25,25 @@
 
 
 <script type="text/javascript">
-	var my_scale = d3.scale.quantile(); // http://stackoverflow.com/questions/19258996/what-is-the-difference-between-d3-scale-quantize-and-d3-scale-quantile
+	var my_scale = d3.scale.threshold();
 
 	my_scale
-		.domain([5,6,7,10])
-		.range(['F','C','A']);
+		.domain([5,7.5,10])
+		.range(['Invalid Low','C','B','Invalid High']);
 
 	var values = [];
 
 	values.push(5);
 	for (var i = 0; i < 40; i++) {
 		var new_number = 0.125 + values[values.length - 1];
-		values.push(new_number);
+		values.push(+new_number);
 	};
 
-	values.sort();
+	values.push(4.999);
+	values.push(9.999);
+	values.push(11);
+
+	values.sort(function(a, b){return a-b});
 	
 	d3.select("table")
 		.selectAll("td")
