@@ -1,0 +1,11 @@
+*.lock
+*.DS_Store
+*.swp
+*.out
+*.class
+/build
+node_modules
+.idea
+.project
+*.sublime-workspace
+*.sublime-workspace
