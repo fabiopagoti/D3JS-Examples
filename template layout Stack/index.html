@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<meta charset=UTF8> <!-- required as D3 uses UTF8 <-->
+<script src="../d3/d3.js" type="text/javascript" ></script>
+<link rel="stylesheet" type="text/css" href="style.css">
+<head>
+	<title>D3 js Examples - </title>
+</head>
+<body>
+
+<div>
+	<svg>
+	</svg>
+</div>
+
+<script type="text/javascript">
+
+	var width_full = 500;
+	var height_full = 500;
+
+	var margin = { top: 50, bottom: 50, left: 0, right:0 };
+
+	var width = width_full - margin.left - margin.right;
+	var height = height_full - margin.top - margin.bottom;
+
+	var bar_padding = 10;
+
+	var canvas = d3.select("svg")
+						.attr("width", width_full)
+						.attr("height", height_full)
+						.append("g")
+							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	var data;
+	var new_data;
+
+	var scale_x = d3.scale.linear()
+					.range([0,width]);
+
+	var scale_y = d3.scale.linear()
+					.range([1,height]);
+
+
+	d3.json("simple.json", function(_data){
+		data = _data;
+		// console.log(data);
+
+		var layout = d3.layout.stack();
+		new_data = layout(data);
+		console.log(new_data);
+
+		scale_x.domain([
+							d3.min(new_data, 
+								function(d,i){
+									return d.x;
+							}),
+
+							d3.max(new_data, 
+								function(d,i){
+									return d.x;
+							})
+						]);
+
+
+		scale_y.domain([
+							0,
+							20
+						]);
+
+	
+		var groups = canvas.selectAll("g")
+						.data(new_data)
+						.enter()
+						.append("g");
+
+
+			groups.selectAll("rect")
+				.data( function(d,i) { return d; })
+				.enter()
+				.append("rect")
+					.attr("width", function(d){ return 40 - bar_padding;} )
+					.attr("height", function(d) { return scale_y(d.y) ;})
+					.attr("x", function(d,i) { return i * 40; })
+					.attr("y",function(d) { return parseInt(d.y0) ;})
+					.attr("fill", "green");
+
+
+
+	});
+
+	
+</script>
+
+</body>
+</html>

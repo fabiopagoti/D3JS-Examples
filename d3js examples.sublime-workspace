@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"pad",
+				"padding_bottom"
+			],
+			[
+				"i",
+				"italic"
+			],
+			[
+				"font-",
+				"font-style:   (property)"
+			],
+			[
+				"ax",
+				"axis_x"
+			],
+			[
+				"sc",
+				"scale_y"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"scla",
+				"scale_x"
+			],
+			[
 				"key",
 				"key_selected"
 			],
@@ -100,17 +128,32 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/fabiopagoti/Dev/js/d3js"
+		"/Users/fabiopagoti/Dev/js/d3js",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 036 - control - each",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 045 - transition - ease",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 050 - transition - ease methods",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 075 - axes - ticks"
 	],
 	"file_history":
 	[
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 050 - transition - ease methods/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 036 - control - each/index.html",
+		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 045 - transition - ease/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 075 - axes - ticks/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 074 - axes - horizontal/style.css",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 074 - axes - horizontal/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 073 - axes - horizontal/style.css",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 073 - axes - horizontal/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/d3/d3.wiki/SVG-Axes.md",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 016 - svg - rect/index.html",
+		"/Users/fabiopagoti/Dev/js/d3js/exercise 042 - transition/index.html",
 		"/Users/fabiopagoti/Dev/js/d3js/template/index.html",
 		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/User/STProjectMaker.sublime-settings",
 		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/index.html",
 		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/model/pokemon.json",
 		"/Users/fabiopagoti/Dev/openui5/NYT-Campaign-Finance/index.html",
 		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/GoSublime.sublime-settings",
-		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/USAGE.md",
 		"/Users/fabiopagoti/Library/Application Support/Sublime Text 3/Packages/GoSublime/CHANGELOG.md",
 		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/controls/br.com.hanabrasil.polygonStats.js",
 		"/Users/fabiopagoti/Dev/openui5/polygon-stats-d3/model/test.json",
@@ -155,7 +198,7 @@
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 35.0
 	},
 	"find_in_files":
 	{
@@ -169,6 +212,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"svg.axis",
+			"axis",
 			"\",\n",
 			"jpg",
 			"nyt-article-search",
@@ -207,7 +252,7 @@
 		"show_context": true,
 		"use_buffer2": true,
 		"whole_word": false,
-		"wrap": false
+		"wrap": true
 	},
 	"groups":
 	[
