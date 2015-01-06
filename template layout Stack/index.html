@@ -18,18 +18,26 @@
 	var width_full = 500;
 	var height_full = 500;
 
-	var margin = { top: 50, bottom: 50, left: 0, right:0 };
+	var margin = { top: 100, bottom: 50, left: 50, right:50 };
 
 	var width = width_full - margin.left - margin.right;
 	var height = height_full - margin.top - margin.bottom;
 
-	var bar_padding = 10;
+	// var bar_padding = 10;
+
+	var padding = { left: 5, right: 5 };
 
 	var canvas = d3.select("svg")
 						.attr("width", width_full)
 						.attr("height", height_full)
 						.append("g")
 							.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+	// canvas
+	// 	.append("rect")
+	// 		.attr("width", width)
+	// 		.attr("height",height)
+	// 		.style("fill", "white")
 
 	var data;
 	var new_data;
@@ -40,13 +48,24 @@
 	var scale_y = d3.scale.linear()
 					.range([1,height]);
 
+//Easy colors accessible via a 10-step ordinal scale
+	var colors = d3.scale.category10();
 
-	d3.json("simple.json", function(_data){
+	d3.json("simple5.json", function(_data){
 		data = _data;
+
+		data.forEach(function(d){
+			d.x = +d.x;
+			d.y = +d.y;
+		});
+
 		// console.log(data);
 
 		var layout = d3.layout.stack();
-		new_data = layout(data);
+		new_data = data;
+
+		layout(new_data);
+
 		console.log(new_data);
 
 		scale_x.domain([
@@ -64,27 +83,33 @@
 
 		scale_y.domain([
 							0,
-							20
+							d3.max(new_data, function(d) {
+								return d3.max(d, function(d) {
+									return d.y + d.y0;
+								});
+							})
 						]);
 
 	
 		var groups = canvas.selectAll("g")
 						.data(new_data)
 						.enter()
-						.append("g");
+						.append("g")
+							.style("fill", function(d, i) {
+								return colors(i);
+							});
 
 
-			groups.selectAll("rect")
-				.data( function(d,i) { return d; })
-				.enter()
-				.append("rect")
-					.attr("width", function(d){ return 40 - bar_padding;} )
-					.attr("height", function(d) { return scale_y(d.y) ;})
-					.attr("x", function(d,i) { return i * 40; })
-					.attr("y",function(d) { return parseInt(d.y0) ;})
-					.attr("fill", "green");
-
-
+		groups.selectAll("rect")
+			.data( function(d,i) { return d; })
+			.enter()
+			.append("rect")
+				.attr("width", function(d,i){ return (width / new_data[0].length) - padding.left} )
+				.attr("height", function(d,i) { return scale_y(d.y) ;})
+				.attr("x", function(d,i) { return (i * (width / new_data[0].length)); })
+				.attr("y",function(d) { return scale_y(d.y0);})
+				// .attr("fill", "green")
+				;
 
 	});
 
