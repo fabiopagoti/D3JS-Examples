@@ -51,7 +51,7 @@
 //Easy colors accessible via a 10-step ordinal scale
 	var colors = d3.scale.category10();
 
-	d3.json("simple5.json", function(_data){
+	d3.json("simple4.json", function(_data){
 		data = _data;
 
 		data.forEach(function(d){
@@ -107,7 +107,7 @@
 				.attr("width", function(d,i){ return (width / new_data[0].length) - padding.left} )
 				.attr("height", function(d,i) { return scale_y(d.y) ;})
 				.attr("x", function(d,i) { return (i * (width / new_data[0].length)); })
-				.attr("y",function(d) { return scale_y(d.y0);})
+				.attr("y",function(d) { return height - scale_y(d.y0 + d.y);})
 				// .attr("fill", "green")
 				;
 
