@@ -36,8 +36,8 @@
 	var data;
 	var new_data;
 
-	// var scale_x = d3.scale.ordinal()
-	// 				.range("Time 1", "Time 2");
+	var scale_x = d3.scale.ordinal()
+					.range(d3.range(4));
 
 	var scale_y = d3.scale.linear()
 					.range([1,height]);
@@ -46,7 +46,8 @@
 	var colors = d3.scale.category10();
 
 	function key(d,i){
-		return d.time;
+		// console.log("Key is" + d[0].time);
+		return d[0].time;
 	};
 
 
@@ -56,20 +57,25 @@
 		data.forEach(function(d){
 			d.forEach(function(row){
 				row.divida = +row.divida;
-				row.y = row.divida;
 			})
 		});
 
-		// console.log(data);
 
-		var layout = d3.layout.stack();
+		var layout = d3.layout.stack()
+			.x(function(d){
+				return +scale_x(d.time);
+			})
+			.y(function(d){
+				return d.divida;
+			});
 		new_data = data;
 
 		layout(new_data);
 
 		console.log(new_data);
 
-		// scale_x.domain("Santos", "Palmeiras", "Corinthians", "Sao Paulo")
+
+		scale_x.domain(["Santos", "Palmeiras", "Corinthians", "Sao Paulo"])
 
 		scale_y.domain([
 							0,
@@ -80,9 +86,10 @@
 							})
 						]);
 
+
 		var groups = canvas.selectAll("g")
-						// .data(new_data,key)
-						.data(new_data)
+						.data(new_data,key)
+						// .data(new_data)
 						.enter()
 						.append("g")
 							.style("fill", function(d, i) {
@@ -96,11 +103,9 @@
 			.append("rect")
 				.attr("width", function(d,i){ 
 					return (width / new_data[0].length) - padding.left;
-						// return 20;
 					})
 				.attr("height", function(d,i) {
 					return scale_y(d.y) ;
-					// return 30;
 					})
 				.attr("x", function(d,i) { 
 					return (i * (width / new_data[0].length)); 
@@ -109,7 +114,7 @@
 				.attr("y",function(d) { 
 					return height - (scale_y(d.y0) + scale_y(d.y));
 				})
-				.attr("fill", "green")
+				// .attr("fill", "green")
 				;
 
 	});
